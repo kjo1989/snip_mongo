@@ -1,0 +1,9 @@
+{
+  "name": "snipiconsDb",
+  "connector": "mongodb",
+  "url": "",
+  "host": "localhost",
+  "port": 27017,
+  "user": "hovo",
+  "database": "snipiconsDb"
+}

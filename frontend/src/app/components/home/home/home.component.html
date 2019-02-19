@@ -1,0 +1,126 @@
+<div class="container-fluid headline px-0">
+  <h1>Icon management tool</h1>
+  <img src="/assets/media/icon-plus-icon.svg" style="max-width: 450px;">
+  <p class="lead">for developers, teams and organisations to modernise, simplify and speed up <br>icon management
+    process in rapidly iterating development environments</p>
+</div>
+<!-- end Headline -->
+
+<!-- Description of tools -->
+<section class="featureslist">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="/assets/media/projects-mono.svg">
+        <p>sort and group icons into sets, organise sets into projects</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/vault-mono.svg">
+        <p>secure repository to upload, organise and share your icons</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/import-mono.svg">
+        <p>discover, import and integrate third party popular icon sets</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/m-tenant-mono.svg">
+        <p>multi-tenant accounts for agile teams and organisations</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/fill.svg">
+        <p>customisation tools for effortless editing and styling of icons</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/group-edit.svg">
+        <p>edit and combine basic icons to create new concepts</p>
+      </div>
+      <div class="col">
+        <img src="/assets/media/live-link.svg">
+        <p>implementation links served from fast and reliable CDNs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="styledemo-container">
+  <div class="demorow">
+    <p class="lead text-center">plus a library of <b>21547</b> pixel perfect, uniformly designed icons in six styles,
+      <br>that can be combined to create new concepts and customised to deliver consistent designs and uniform look</p>
+    <ng-container *ngIf="!headIcons" class="row">
+      <a class="demorow-iconbox" *ngFor="let item of graphicTypes">
+        <span [ngClass]="selectedType== item.GraphicsType ? 'active':''">{{ item.GraphicsType }}</span>
+        <img [src]="item.Data" alt="Clock icon - regular">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="demolist">
+    <div class="search-result-container container">
+      <ng-container *ngFor ="let ic of icons;let i = index">
+        <figure >
+          <div *ngIf="ic.Source && ic.Source!=undefined" (click)="reloadHeadIcons(ic.FirstRegID)" [innerHTML]="_DomSanitizer.bypassSecurityTrustHtml(ic.Source)">
+          </div>
+          <i *ngIf="ic.Source==undefined" class="snipicon-copy-upload"></i>
+        </figure>
+      </ng-container>
+    </div>
+  </div>
+</section>
+<!-- xDemos projects-sets -->
+
+<section class="blue-gray-22">
+  <div class="container feature-slider">
+    <div class="row">
+      <div class="col-4 feature-slide-text">
+        <img src="/assets/media/projects-mono.svg" class="snipicon64">
+        <h2>organise your icons </h2>
+        <p>Manage, organise and share all your projects in one place. Sort and group icons into sets, organised around concepts, designs, context, location in the app or any other sorting criteria user chooses to apply.  </p>
+      </div>
+      <div class="col-8 feature-slides">
+        <div id="organiseYourIconsImages" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators snip-indicators-override">
+            <li data-target="#organiseYourIconsImages" data-slide-to="0" class="active"></li>
+            <li data-target="#organiseYourIconsImages" data-slide-to="1"></li>
+            <li data-target="#organiseYourIconsImages" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active"
+                 *ngFor="let imageItem of organiseYourIconsImages; let first = first"
+                 [ngClass]="{'active': first}">
+              <figure> <img [src]="imageItem.path" class="img-fluid" /> </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gray-87">
+  <div class="container feature-slider">
+    <div class="row">
+      <div class="col-8 feature-slides">
+        <div id="secureRepositoryImages" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators snip-indicators-override">
+            <li data-target="#secureRepositoryImages" data-slide-to="0" class="active"></li>
+            <li data-target="#secureRepositoryImages" data-slide-to="1"></li>
+            <li data-target="#secureRepositoryImages" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active"
+                 *ngFor="let imageItem of secureRepositoryImages; let first = first"
+                 [ngClass]="{'active': first}">
+              <figure> <img [src]="imageItem.path" class="img-fluid" /> </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 feature-slide-text">
+        <img src="/assets/media/collections.svg" class="snipicon64">
+        <h2>secure repository</h2>
+        <p>Upload your own icons, organise them into collections, share with your team and integrate in your projects. Easily discover and import third party popular sets. </p>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+<div class="container-fluid register_content_wrapper">
+  <div *ngIf="isRegistered">
+    <p (click)="confirmRegistration()">Please, activate Your email.</p>
+  </div>
+  <div *ngIf = '!isRegistered' class="container-fluid register_form_wrapper">
+    <h4>
+      create an account to join
+    </h4>
+    <div *ngIf="!isRegistered" class="register_form">
+      <form [formGroup]="registerFormGroup" (ngSubmit)="registration()">
+        <div class="form-group">
+          <span>Name</span>
+          <br />
+          <input type="email" class="form-control" formControlName="name"/>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+               class="alert alert-danger">
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 3 characters long
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>Email</span>
+          <br />
+          <input type="email" class="form-control" formControlName="email"/>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.email">
+              Type correct email.
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <span>Password</span>
+          <input type="password" formControlName="password" class="form-control" />
+          <div *ngIf="password.invalid && (password.dirty || password.touched)"
+               class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 5 characters long.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>Confirm password</span>
+          <input type="password" formControlName="confirmPassword" class="form-control" />
+          <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+               class="alert alert-danger">
+            <div *ngIf="confirmPassword.errors.required">
+              Password is required.
+            </div>
+            <div *ngIf="confirmPassword.errors.minlength">
+              Password must be at least 5 characters long.
+            </div>
+            <div *ngIf="confirmPassword.errors.notConfirm">
+              Passwords do not match
+            </div>
+          </div>
+        </div>
+        <button type="submit" (click)="registration()" [disabled]="submitted || registerFormGroup.invalid" mat-button style="outline: none">JOIN</button>
+      </form>
+    </div>
+    <p>
+      or use any of the following services
+    </p>
+    <div class="row justify-content-between join_items_end_block">
+      <div class="j_items" *ngFor="let j_items of joinItems">
+        <div class="w-100">
+          <img src="{{j_items.imageSrc}}">
+        </div>
+          <span>{{j_items.companyName}}</span>
+      </div>
+    </div>
+  </div>
+</div>

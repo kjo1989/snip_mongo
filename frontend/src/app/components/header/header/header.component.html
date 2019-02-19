@@ -1,0 +1,31 @@
+<div class="container-fluid header_wrapper">
+  <div class="row justify-content-between px-4">
+    <div class="left_logo_block col-xl-3
+     col-lg-3 col-md-3 col-sm-4 px-0 py-0 align-items-start">
+      <span class="header_left_alfa">ALPHA 0.0.7 - BUILD 20181101.6</span>
+      <h4>
+        <a (click)="goToPage('/')">SNIPICONS /</a>
+        <i class="fas fa-user-alt"></i>
+        <div class="sign_in_block"><button (click)="goToPage('/sign_up')" class="login_btn" mat-button (close)="goToPage('/sign_up')">Sign up!</button></div>|
+        |<div class="sign_in_block"><button (click)="goToPage('/sign_in')" class="login_btn" mat-button (close)="goToPage('/sign_in')">Sign in!</button></div>
+        <ng-content></ng-content>
+      </h4>
+    </div>
+    <div class="right_header_block col-xl-2
+     col-lg-3 col-md-4 col-sm-5 px-0">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-8 px-0">
+            <span>SUBSCRIPTION PLANS</span>
+          </div>
+          <div class="col px-0" title="DOCUMENTATION">
+            <i class="fas fa-book header_right_icon"></i>
+          </div>
+          <div class="col px-0">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

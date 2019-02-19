@@ -1,0 +1,54 @@
+.header_wrapper {
+  background-color: #F1F1F1;
+  border-bottom: 4px solid #D2DFEB;
+}
+
+.left_logo_block {
+  line-height: 0.8em;
+
+  a {
+    cursor: pointer;
+    transition: 0.06s;
+  }
+
+  a:hover {
+    border-bottom: 3px solid black;
+  }
+
+  .sign_in_block {
+    display: inline;
+    padding-bottom: 16px;
+    transition: 0.2s;
+
+    .login_btn{
+      outline: none;
+      font-size: 1.2rem;
+      border-bottom: 2px inset lightgrey;
+    }
+  }
+
+  .sign_in_block:hover {
+    border-bottom: 7px solid #bacee0;
+  }
+}
+
+.header_left_alfa {
+  font-size: 0.6em;
+}
+
+.right_header_block div.container-fluid {
+  margin-top: 13px;
+}
+
+.right_header_block span {
+  font-size: 1em;
+}
+
+a {
+  font-weight: bold;
+  color: black;
+}
+
+/*.header_right_icon {*/
+/*font-size: 24px;*/
+/*}*/

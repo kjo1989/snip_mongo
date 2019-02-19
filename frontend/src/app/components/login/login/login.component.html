@@ -1,0 +1,112 @@
+<!--<div class="container-fluid sign_in_wrap">-->
+  <!--<div class="sign_in_head_title">-->
+    <!--<h3>Sign in or join using any of following services</h3>-->
+    <!--<h5>Join for free upgrade anytime</h5>-->
+  <!--</div>-->
+  <!--<div class="row justify-content-between intern_logining_block">-->
+    <!--<div class="col login-button"> <img src="assets/media/google-g.svg"><span>Google</span></div>-->
+    <!--<div class="col login-button"> <img src="assets/media/microsoft.svg"><span>Microsoft</span></div>-->
+    <!--<div class="col login-button"> <img src="assets/media/facebook.svg"><span>Facebook</span></div>-->
+    <!--<div class="col login-button"> <img src=""><span>Twitter</span></div>-->
+  <!--</div>-->
+  <!--<div class="email_sign_in_block">-->
+    <!--<div class="login-button" (click)="showLoginForm()"><img src="assets/media/email-signinup.svg"><span>Email</span></div>-->
+  <!--</div>-->
+
+  <!--<div *ngIf="loginFormGroupCondition" class="m-auto login_form_block">-->
+    <!--<form [formGroup]="loginFormGroup" (ngSubmit)="logIn()">-->
+        <!--<div class="form-group">-->
+          <!--<span>Email</span>-->
+          <!--<br />-->
+          <!--<input id="email" type="email" class="form-control" formControlName="email"/>-->
+          <!--<div *ngIf="email.invalid && (email.dirty || email.touched)"-->
+               <!--class="alert alert-danger">-->
+
+            <!--<div *ngIf="email.errors.required">-->
+              <!--Email is required.-->
+            <!--</div>-->
+            <!--<div *ngIf="email.errors.email">-->
+              <!--Type correct email.-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<br />-->
+      <!--<div class="form-group">-->
+        <!--<span>Password</span>-->
+        <!--<input type="password" formControlName="password" class="form-control" (keydown.enter)="logIn()" />-->
+        <!--<div *ngIf="password.invalid && (password.dirty || password.touched)"-->
+             <!--class="alert alert-danger">-->
+
+          <!--<div *ngIf="password.errors.required">-->
+            <!--Password is required.-->
+          <!--</div>-->
+          <!--<div *ngIf="password.errors.minlength">-->
+            <!--Password must be at least 3 characters long.-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<button type="submit" (click)="logIn()" [disabled]="submitted" mat-button style="outline: none">Sign in</button>-->
+    <!--</form>-->
+  <!--</div>-->
+  <!--<div class="login_form_sub_block">-->
+    <!--<p>By using our application to our Terms of service, Privacy policy and licensing Agreement</p>-->
+    <!--<P>Follow our social channels</P>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="sign_in_foot_block px-4 py-1">-->
+  <!--<p>COPYRIGHT <i class="far fa-copyright"></i> 2018 - SNIPICONS - APPLICA MAGNIFICA</p>-->
+<!--</div>-->
+<div class="container-fluid login_content_wrapper">
+  <div class="container-fluid login_form_wrapper">
+    <h4>sign in or join using any of following services</h4>
+    <div class="row login_block justify-content-between">
+      <div class="w-50 join_block">
+        <div *ngFor="let j_items of joinItems" class="join_item">
+          <p>
+            <img src="{{j_items.imageSrc}}">
+          </p>
+          <p>
+            {{j_items.companyName}}
+          </p>
+        </div>
+      </div>
+      <div class="w-50 sign_in_block">
+        <form [formGroup]="loginFormGroup" (ngSubmit)="logIn()">
+        <div class="form-group">
+        <span>Email</span>
+        <br />
+        <input id="email" type="email" class="form-control" formControlName="email"/>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+        Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+        Type correct email.
+        </div>
+        </div>
+        </div>
+        <br />
+        <div class="form-group">
+        <span>Password</span>
+        <input type="password" formControlName="password" class="form-control" (keydown.enter)="logIn()" />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+        Password is required.
+        </div>
+        <div *ngIf="password.errors.minlength">
+        Password must be at least 3 characters long.
+        </div>
+        </div>
+        </div>
+          <button type="submit" (click)="logIn()" [disabled]="submitted || loginFormGroup.invalid" mat-button style="outline: none">SIGN IN</button>
+          <p class="retrieve_password">Rest/retrieve password</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sign_in_foot_block px-4 py-1">
+<p><i class="far fa-copyright"></i> SNIPICONS - APPLICA MAGNIFICA</p>
+</div>
