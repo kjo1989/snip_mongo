@@ -1,9 +1,10 @@
 {
   "name": "snipiconsDb",
   "connector": "mongodb",
-  "url": "",
-  "host": "localhost",
+  "url": "35.242.185.195",
+  "host": "35.242.185.195",
   "port": 27017,
-  "user": "hovo",
+  "password":"GVhYeRK5oVDZ",
+  "user": "root",
   "database": "snipiconsDb"
 }
